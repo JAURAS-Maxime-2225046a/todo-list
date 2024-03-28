@@ -1,8 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import addTaskImg from "./assets/plus-solid.svg";
-//import Calendar from "react-calendar";
-//import 'react-calendar/dist/Calendar.css';
 
 // eslint-disable-next-line react/prop-types
 function TaskForm({ addTask }) {

@@ -20,13 +20,22 @@ function TodoList() {
         ));
     };
 
+    const remainingTasks = tasks.filter(task => !task.completed).length;
+
+    const handleCheckboxChange = (taskId, completed) => {
+        setTasks(tasks.map(task =>
+            task.id === taskId ? { ...task, completed: completed } : task
+        ));
+    };
+
     return (
         <div>
             <h1>Ma Todo-List</h1>
-            <TaskForm addTask={addTask} />
+            <p>Il reste {remainingTasks} tâche(s) à réaliser.</p>
+            <TaskForm addTask={addTask}/>
             <ul>
                 {tasks.map(task => (
-                    <Task key={task.id} task={task} deleteTask={deleteTask} editTask={editTask} />
+                    <Task key={task.id} task={task} deleteTask={deleteTask} editTask={editTask} handleCheckboxChange={handleCheckboxChange}/>
                 ))}
             </ul>
         </div>
