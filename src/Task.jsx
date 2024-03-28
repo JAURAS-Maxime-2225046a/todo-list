@@ -58,6 +58,7 @@ function Task({ task, deleteTask, editTask, handleCheckboxChange }) {
                     />
                 </div>
             )}
+            <p>{selectedDate.toLocaleDateString()}</p>
         </li>
 
     );
